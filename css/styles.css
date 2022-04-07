@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Roboto+Slab:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #DB3E38;
+  --secondary-color: #1B1818;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+  height: 1000px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.sr-only {
+  display: none;
+}
+
+.flex {
+  display: flex;  
+}
+
+.container {    
+  padding-inline: 7%;
+  
+}
+
+.section-title {
+  margin: 0;
+}
+
+.circle {
+  background-color: #1B1818;
+  width: 25px;
+  height: 25px;
+  display: inline-block;  
+  border-radius: 50%;
+  display: none;
+  /* position: absolute;
+  top: 61px;
+  left: 17px; */
+}
+
+/***************** Header *****************/
+header {  
+  position: sticky;
+  top: 0;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #000;  
+  border-bottom: 1px solid var(--primary-color);
+}
+
+#logo {
+  width: 2rem;
+  height: 2rem;
+  margin-block: 1rem;
+  transition: margin 150ms ease-in;
+}
+
+#nav-bar {
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  background-color: hsl(0 0% 0% / 0.9);
+}
+
+/* For browsers that support backdrop-filter */
+@supports (backdrop-filter: blur(0.5rem)) {
+  #nav-bar {
+    background-color: hsl(0 0% 0% / 0.5);
+    backdrop-filter: blur(0.3rem);
+  }
+}
+
+#nav-bar li a {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;  
+}
+
+#nav-bar li a > span {
+  margin-inline-end: 0.5em;
+  font-weight: 700;
+}
+
+#nav-toggle { 
+  display: none;
+  transition: top 150ms ease-in;
+}
+
+.active::after {
+  content: "";
+  display: block;
+  width: 10rem;
+  border-bottom: 1px solid var(--primary-color);
+}
+
+/***************** Mobile Nav *****************/
+@media (max-width: 35em) {
+  #nav-bar {
+    gap: 3em;
+    padding: min(30vh, 10rem) 2rem;
+    flex-direction: column;
+    position: fixed;
+    inset: 0 0 0 30%;
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+    z-index: 1000;
+  }
+
+  #nav-bar[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  #nav-toggle {
+    display: block;
+    width: 2rem;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 1rem;
+    right: 7%;
+    background-color: transparent;
+    color: #fff;
+    border: 0;
+    z-index: 9999;
+  }
+}
+
+/***************** Intro *****************/
+#intro {
+  padding-top: 1rem;
+  background-color: #000;
+  color: #fff;
+}
+
+#intro.container {
+  margin-top: 0;
+}
+
+#intro .circle {
+  background-color: #fff;
+}
+
+/***************** Tablet *****************/
+@media (min-width: 35em) and (max-width: 55em) {
+  #nav-bar li a > span {
+    display: none;
+  }
+}
+
+/***************** Larger than mobile *****************/
+@media (min-width: 35em) {
+  #logo {
+    width: 3rem;
+    height: 3rem;    
+  }
+
+  #nav-bar {
+    gap: clamp(1.5rem, 5vw, 3rem);
+    padding-block: 1rem;
+  }
+
+  .active::after {
+    width: 100%;    
+    padding-top: 2px;
+  }
+}
+
+/* REM (relative unit, similar to ems, relative to html, default is 16px)
+  - font-size
+  - margin/padding
+*/
+
+/* EM (relative unit, width of a capital "M")
+  - not for font-size
+  - margin/padding
+  - padding on buttons (anything containing text)
+  - media queries
+*/
+
+/* %
+  - Width, max-width
+  - Height(avoid setting height if possible), min-height
+*/
+
+/* PX
+  - Don't use them
+  - use them for something small like border or shadow
+*/
+
+/* CH (width of an "o" of any given font)
+  -
+*/
