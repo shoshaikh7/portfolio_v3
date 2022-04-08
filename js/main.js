@@ -1,3 +1,4 @@
+const header = document.querySelector('header.container')
 const navBar = document.querySelector('#nav-bar');
 const navLinks = navBar.querySelectorAll('li');
 const navToggle = document.querySelector('#nav-toggle');
@@ -46,15 +47,17 @@ navLinks.forEach(link => {
   });
 })
 
-// Decrease nav height on scroll
+// Decrease header height on scroll
 document.addEventListener('scroll', () => {
   let lastKnownScrollPosition = 0;
   lastKnownScrollPosition = window.scrollY;
   if (lastKnownScrollPosition > 0) {
-    navToggle.style.top = '0.5rem';
+    header.style.paddingBlock = '0'
     logo.style.marginBlock = '0.5rem';
-  } else {
     navToggle.style.top = '1rem';
+  } else {
+    header.style.paddingBlock = '1rem 0'
     logo.style.marginBlock = '1rem';
+    navToggle.style.top = '2rem';
   }
 });
