@@ -31,7 +31,7 @@ navToggle.addEventListener('click', () => {
 
 // Close nav if user clicks outside nav
 document.addEventListener('click', (e) => {
-  if (e.target.id !== 'nav-bar' && e.target.id !== 'nav-toggle-icon') {    
+  if (e.target.id !== 'nav-bar' && e.target.id !== 'nav-toggle-icon') {
     hideNav();
   }
 });
@@ -52,12 +52,16 @@ document.addEventListener('scroll', () => {
   let lastKnownScrollPosition = 0;
   lastKnownScrollPosition = window.scrollY;
   if (lastKnownScrollPosition > 0) {
-    header.style.paddingBlock = '0'
     logo.style.marginBlock = '0.5rem';
-    navToggle.style.top = '1rem';
+    logo.style.width = 'min(2rem, 3rem)';
+    logo.style.height = 'min(2rem, 3rem)';
+    navToggle.style.top = '0.9rem';
+    navToggleIcon.style.fontSize = ('1.5rem');
   } else {
-    header.style.paddingBlock = '1rem 0'
     logo.style.marginBlock = '1rem';
+    logo.style.width = 'clamp(2rem, 3rem, 4rem)';
+    logo.style.height = 'clamp(2rem, 3rem, 4rem)';
     navToggle.style.top = '2rem';
+    navToggleIcon.style.fontSize = ('2rem');
   }
 });
