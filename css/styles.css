@@ -21,7 +21,7 @@ body {
   font-family: var(--ff-body);
   font-size: var(--fs-400);
   overflow-x: hidden;
-  height: 4000px;
+  min-width: 14rem;
 }
 
 body,
@@ -59,12 +59,19 @@ h1 {
 
 .container {
   padding-block: min(6vh, 6rem);
-  padding-inline: clamp(1rem, 7%, 20rem)
+  padding-inline: clamp(2rem, 10%, 15rem);
 }
 
 .section-title {
   margin: 0;
   text-transform: uppercase;
+}
+
+main .section-title {
+  width: fit-content;
+  background-color: var(--primary-color);
+  color: #fff;
+  padding-inline: 10px;
 }
 
 .circle {
@@ -85,7 +92,7 @@ h1 {
 }
 
 /***************** Header *****************/
-header {  
+header {
   position: sticky;
   top: 0;
   align-items: center;
@@ -99,7 +106,7 @@ header.container {
   padding-block: 0;
 }
 
-#logo {
+#logo {  
   width: clamp(2rem, 3rem, 4rem);
   height: clamp(2rem, 3rem, 4rem);
   margin-block: 1rem;
@@ -134,7 +141,7 @@ header.container {
 }
 
 #nav-toggle {
-  display: none;  
+  display: none;
 }
 
 #nav-toggle-icon {
@@ -179,7 +186,7 @@ header.container {
 
 /***************** Intro *****************/
 #intro {
-  min-height: 80vh;
+  min-height: 78vh;
   position: relative;
   /* display: flex;
   flex-direction: column;
@@ -227,8 +234,8 @@ header.container {
   text-decoration: none;
 }
 
-#view-my-work {  
-  bottom: 7rem;  
+#view-my-work {
+  bottom: 7rem;
   font-size: var(--fs-500);
   font-weight: 700;
 }
@@ -242,6 +249,118 @@ header.container {
 #view-my-work:hover~#down-arrow {
   transform: translateY(5px);
   color: var(--primary-color);
+}
+
+/***************** My Work *****************/
+#projects {
+  gap: 2rem;
+  flex-wrap: wrap;
+  /* flex: 1;? */
+  flex: 1 1 0%;
+  padding-block: min(6vh, 6rem);
+}
+
+.project {
+  width: 22rem;
+  padding: 0.7rem;
+  transition: transform 350ms ease 0s;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+
+.project:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.project-img {
+  width: 100%;
+}
+
+.project-name, .project-description {
+  margin-block: 1rem;
+}
+
+.project-name {
+  transition: color 350ms ease 0s;
+}
+
+.project:hover > .project-name {
+  color: var(--primary-color);
+}
+
+.project-description {
+  color: #b4b5b3;
+}
+
+.project-link {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgb(77, 78, 77);
+  text-transform: uppercase;
+  transition: text-decoration 550ms ease 0s;
+}
+
+.project:hover > .project-link {
+  text-decoration: underline;
+}
+
+/***************** About Me *****************/
+#my-photo img {
+  border-radius: 50%;
+}
+
+#my-story p {
+  padding-bottom: 1rem;
+}
+
+/***************** Contact Me *****************/
+#contact-me {
+  background-color: #000;
+  color:#fff;
+}
+
+#contact-me .section-title {
+  background-color: #fff;
+  color: var(--primary-color) ;
+}
+
+input[type="text"], select, textarea {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  padding: 12px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-image: initial;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  background-color: rgb(4, 170, 109);
+  color: white;
+  cursor: pointer;
+  padding: 12px 20px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 4px;
+}
+
+
+#my-work-content {
+  flex-direction: column;
+  padding-block: min(6vh, 6rem);
+  gap: 2rem;
+}
+
+/***************** Footer *****************/
+footer {
+  background-color: #000;
+  color: #fff;
 }
 
 /***************** Larger than mobile *****************/
@@ -277,11 +396,18 @@ header.container {
   #nav-bar li a>span {
     display: none;
   }
+
+  .project {
+    width: 14rem;
+  }
 }
 
-/***************** Larger than tablet *****************/
-
 /***************** Desktop *****************/
+@media (min-width: 35em) and (max-width: 55em) {
+ #intro {
+   min-height: 85vh;
+ } 
+}
 
 /***************** Large desktop *****************/
 

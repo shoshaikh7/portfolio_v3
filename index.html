@@ -59,35 +59,117 @@
   </header>
   <!-- END-Header -->
   <!-- START-Intro -->
-  <section id="intro" class="container">
-    <span class="circle"></span>
-    <h1 class="section-title">Hello.</h1>
-    <div id="intro-content">
-      <p class="intro-text">My name is <span class="highlight">Shoaib</span>,</p>
-      <p class="intro-text">but you can call me <span class="highlight">Sho</span>.</p>
-      <p class="intro-text">I am a <span class="highlight">front end</span> web developer.</p>
-      <a id="view-my-work" href="#">View My Work</a>
-      <a id="down-arrow" href="#">&#8595;</a>
+  <section id="intro" class="">
+    <div class="container">
+      <span class="circle"></span>
+      <h1 class="section-title">Hello.</h1>
+      <div id="intro-content">
+        <p class="intro-text">My name is <span class="highlight">Shoaib</span>,</p>
+        <p class="intro-text">but you can call me <span class="highlight">Sho</span>.</p>
+        <p class="intro-text">I am a <span class="highlight">front end</span> web developer.</p>
+        <a id="view-my-work" href="#">View My Work</a>
+        <a id="down-arrow" href="#">&#8595;</a>
+      </div>
     </div>
   </section>
   <!-- END-Intro -->
   <!-- START-Main -->
   <main>
     <!-- START-MyWork -->
-    <section id="my-work">
-
+    <section id="my-work" class="container">
+      <span class="circle"></span>
+      <h1 class="section-title">My Work</h1>
+      <div id="projects" class="flex">
+        <div class="project">
+          <img class="project-img" src="img/project-image-placeholder.svg" alt="project 1">
+          <h3 class="project-name">Project 1</h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+          <a href="" class="project-link">View project</a>
+        </div>
+        <div class="project">
+          <img class="project-img" src="img/project-image-placeholder.svg" alt="project 2">
+          <h3 class="project-name">Project 2</h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+          <a href="" class="project-link">View project</a>
+        </div>
+        <div class="project">
+          <img class="project-img" src="img/project-image-placeholder.svg" alt="project 3">
+          <h3 class="project-name">Project 3</h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+          <a href="" class="project-link">View project</a>
+        </div>
+        <div class="project">
+          <img class="project-img" src="img/project-image-placeholder.svg" alt="project 4">
+          <h3 class="project-name">Project 4</h3>
+          <p class="project-description">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+          </p>
+          <a href="" class="project-link">View project</a>
+        </div>
+      </div>
     </section>
     <!-- END-MyWork -->
     <!-- START-AboutMe -->
-
+    <section id="about-me" class="container">
+      <span class="circle"></span>
+      <h1 class="section-title">About me</h1>
+      <div id="my-work-content" class="flex">
+        <div id="my-photo">
+          <img src="img/sho.jpeg" alt="Photo of myself">
+        </div>
+        <div id="my-story">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima eos ullam rerum placeat adipisci, cumque
+            fugit dolore voluptates eius, quae voluptatibus quisquam doloribus itaque iure amet minus ratione in
+            facere.
+          </p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, laboriosam incidunt. Quia
+            repellendus
+            commodi adipisci temporibus odit iure at aut veniam eum dolore, reprehenderit amet natus qui nobis
+            recusandae animi.</p>
+        </div>
+      </div>
+    </section>
     <!-- END-AboutMe -->
     <!-- START-ContactMe -->
+    <section id="contact-me" class="container">
+      <span class="circle"></span>
+      <h1 class="section-title">Contact Me</h1>
+      <div id="my-work-content">
+        <!-- DUMMY FORM -->
+        <form>
+          <label for="fname">First Name</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
+          <label for="lname">Last Name</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+          <label for="country">Country</label>
+          <select id="country" name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+          </select>
+
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </section>
     <!-- END-ContactMe -->
   </main>
   <!-- END-Main -->
   <!-- START-Footer -->
-
+  <footer class="container flex">
+    <div class="made-by">Shoaib Shaikh ©2022</div>
+  </footer>
   <!-- END-Footer -->
 
   <script src="js/main.js"></script>
