@@ -59,17 +59,15 @@
   </header>
   <!-- END-Header -->
   <!-- START-Intro -->
-  <section id="intro" class="">
-    <div class="container">
-      <span class="circle"></span>
-      <h1 class="section-title">Hello.</h1>
-      <div id="intro-content">
-        <p class="intro-text">My name is <span class="highlight">Shoaib</span>,</p>
-        <p class="intro-text">but you can call me <span class="highlight">Sho</span>.</p>
-        <p class="intro-text">I am a <span class="highlight">front end</span> web developer.</p>
-        <a id="view-my-work" href="#">View My Work</a>
-        <a id="down-arrow" href="#">&#8595;</a>
-      </div>
+  <section id="intro" class="container">
+    <span class="circle"></span>
+    <h1 class="section-title">Hello.</h1>
+    <div id="intro-content">
+      <p class="intro-text">My name is <span class="highlight">Shoaib</span>,</p>
+      <p class="intro-text">but you can call me <span class="highlight">Sho</span>.</p>
+      <p class="intro-text">I am a <span class="highlight">front end</span> web developer.</p>
+      <a id="view-my-work" href="#">View My Work</a>
+      <a id="down-arrow" href="#">&#8595;</a>
     </div>
   </section>
   <!-- END-Intro -->
@@ -79,7 +77,7 @@
     <section id="my-work" class="container">
       <span class="circle"></span>
       <h1 class="section-title">My Work</h1>
-      <div id="projects" class="flex">
+      <div id="projects" class="content flex">
         <div class="project">
           <img class="project-img" src="img/project-image-placeholder.svg" alt="project 1">
           <h3 class="project-name">Project 1</h3>
@@ -119,7 +117,7 @@
     <section id="about-me" class="container">
       <span class="circle"></span>
       <h1 class="section-title">About me</h1>
-      <div id="my-work-content" class="flex">
+      <div id="about-me-content" class="content flex">
         <div id="my-photo">
           <img src="img/sho.jpeg" alt="Photo of myself">
         </div>
@@ -140,26 +138,35 @@
     <section id="contact-me" class="container">
       <span class="circle"></span>
       <h1 class="section-title">Contact Me</h1>
-      <div id="my-work-content">
-        <!-- DUMMY FORM -->
-        <form>
-          <label for="fname">First Name</label>
-          <input type="text" id="fname" name="firstname" placeholder="Your name..">
-
-          <label for="lname">Last Name</label>
-          <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-
-          <label for="country">Country</label>
-          <select id="country" name="country">
-            <option value="australia">Australia</option>
-            <option value="canada">Canada</option>
-            <option value="usa">USA</option>
-          </select>
-
-          <label for="subject">Subject</label>
-          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-          <input type="submit" value="Submit">
+      <div id="contact" class="content">        
+        <p id="success"></p>
+        <form action="https://formsubmit.co/4094237cedf14ddf60934426759bd598" method="POST" id="contact-form" autocomplete="off" onsubmit="event.preventDefault(); validateForm()">
+          <input type="text" name="_honey" style="display:none">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="http://127.0.0.1:5500/index.html">
+          <ul class="flex">            
+            <li id="form-name">
+              <!-- <label for="name">Name</label> -->
+              <input type="text" name="name" placeholder="Name" required>
+              <small class="error"></small>
+            </li>
+            <li id="form-email">
+              <!-- <label for="email">Email</label> -->
+              <input type="email" name="email" placeholder="Email" required>
+              <small class="error"></small>
+            </li>
+            <li id="form-subject">
+              <!-- <label for="subject">Subject</label> -->
+              <input type="text" name="_subject" placeholder="Subject">
+              <small class="error"></small>
+            </li>
+            <li id="form-message">
+              <!-- <label for="message">Message</label> -->
+              <textarea name="message" placeholder="Message"></textarea>
+              <small class="error"></small>
+            </li>
+          </ul>
+          <input id="form-submit" type="submit" value="Submit">          
         </form>
       </div>
     </section>
@@ -168,7 +175,7 @@
   <!-- END-Main -->
   <!-- START-Footer -->
   <footer class="container flex">
-    <div class="made-by">Shoaib Shaikh ©2022</div>
+    <div class="made-by">Made by <span class="highlight">Shoaib Shaikh</span> © 2022</div>
   </footer>
   <!-- END-Footer -->
 

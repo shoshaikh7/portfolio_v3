@@ -67,11 +67,20 @@ h1 {
   text-transform: uppercase;
 }
 
+/* main {
+  background-color: #121212;
+  color: #fff;
+} */
+
 main .section-title {
   width: fit-content;
   background-color: var(--primary-color);
   color: #fff;
   padding-inline: 10px;
+}
+
+main .content {
+  padding-top: min(6vh, 6rem);
 }
 
 .circle {
@@ -106,11 +115,15 @@ header.container {
   padding-block: 0;
 }
 
-#logo {  
+#logo {
   width: clamp(2rem, 3rem, 4rem);
   height: clamp(2rem, 3rem, 4rem);
   margin-block: 1rem;
-  transition: 150ms ease-in;
+  transition: 300ms ease-in;
+}
+
+#logo:hover {
+  transform: rotate(360deg);
 }
 
 #nav-bar {
@@ -145,7 +158,7 @@ header.container {
 }
 
 #nav-toggle-icon {
-  transition: 150ms ease-in;
+  transition: 300ms ease-in;
 }
 
 .active::after {
@@ -188,9 +201,6 @@ header.container {
 #intro {
   min-height: 78vh;
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-evenly; */
   background-color: #000;
   color: #fff;
 }
@@ -204,10 +214,6 @@ header.container {
   font-size: var(--fs-xl);
   color: #fff;
 }
-
-/* #intro-content {
-  min-height: 40vh;
-} */
 
 .intro-text {
   font-size: 1.25rem;
@@ -255,9 +261,7 @@ header.container {
 #projects {
   gap: 2rem;
   flex-wrap: wrap;
-  /* flex: 1;? */
-  flex: 1 1 0%;
-  padding-block: min(6vh, 6rem);
+  flex: 1;
 }
 
 .project {
@@ -276,7 +280,8 @@ header.container {
   width: 100%;
 }
 
-.project-name, .project-description {
+.project-name,
+.project-description {
   margin-block: 1rem;
 }
 
@@ -284,7 +289,7 @@ header.container {
   transition: color 350ms ease 0s;
 }
 
-.project:hover > .project-name {
+.project:hover>.project-name {
   color: var(--primary-color);
 }
 
@@ -300,11 +305,16 @@ header.container {
   transition: text-decoration 550ms ease 0s;
 }
 
-.project:hover > .project-link {
+.project:hover>.project-link {
   text-decoration: underline;
 }
 
 /***************** About Me *****************/
+#about-me-content {
+  flex-direction: column;
+  gap: 2rem;
+}
+
 #my-photo img {
   border-radius: 50%;
 }
@@ -316,70 +326,99 @@ header.container {
 /***************** Contact Me *****************/
 #contact-me {
   background-color: #000;
-  color:#fff;
+  color: #fff;
 }
 
 #contact-me .section-title {
   background-color: #fff;
-  color: var(--primary-color) ;
+  color: var(--primary-color);
 }
 
-input[type="text"], select, textarea {
+#contact-form {
+  position: relative;
+}
+
+#contact-form ul {
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  list-style-type: none;
+}
+
+#contact-form ul li {
+  position: relative;
+  flex-basis: 100%;
+}
+
+#contact-form ul li input,
+#contact-form ul li textarea {
   width: 100%;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-  padding: 12px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(204, 204, 204);
-  border-image: initial;
-  border-radius: 4px;
+  padding: 1rem;
+  background-color: #1d1d1d;
+  color: #fff;
+  transition: border-bottom 400ms ease-in;
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+#contact-form ul li input:focus,
+#contact-form ul li textarea:focus {  
+  border-bottom: 3px solid var(--primary-color);
+}
+
+#contact-form ul li textarea {
+  min-height: 200px;
 }
 
 input[type="submit"] {
-  background-color: rgb(4, 170, 109);
-  color: white;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.7em 3em;
+  background-color: #000;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  transition-property: background-color, color, border-color; 
+  transition-duration: 400ms; 
+  transition-timing-function: ease-in; 
   cursor: pointer;
-  padding: 12px 20px;
-  border-width: initial;
-  border-style: none;
-  border-color: initial;
-  border-image: initial;
-  border-radius: 4px;
 }
 
+input[type="submit"]:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  border-color: #fff;
+}
 
-#my-work-content {
-  flex-direction: column;
-  padding-block: min(6vh, 6rem);
-  gap: 2rem;
+.error {
+  position: absolute;
+  left: 0;
+  top: -20px;
+  color: var(--primary-color);
+}
+
+#contact-form ul li .error-border {
+  border-left: 3px solid var(--primary-color);
+}
+
+#success {  
+  padding: 1rem;
+  border: 1px solid var(--primary-color);
+  text-align: center;
+  color: var(--primary-color);
+  display: none;
 }
 
 /***************** Footer *****************/
 footer {
+  font-size: 0.8rem;
   background-color: #000;
   color: #fff;
 }
 
 /***************** Larger than mobile *****************/
 @media (min-width: 35em) {
-  :root {
-    --fs-600: 3rem;
-    --fs-500: 1.5rem;
-    --fs-400: 1.125rem;
-  }
-
-  body {
-    /* background-color: red; */
-  }
-
-  #logo {
-    /* width: 4rem;
-    height: 4rem; */
-  }
-
   #nav-bar {
     gap: clamp(1.5rem, 5vw, 3rem);
     padding-block: 1rem;
@@ -387,26 +426,54 @@ footer {
 
   .active::after {
     width: 100%;
-    /* padding-top: 2px; */
+  }
+
+  #contact-form {
+    text-align: right;
+  }
+
+  #contact-form ul {
+    justify-content: space-between;    
+  }
+
+  #contact-form ul li:first-child, #contact-form ul li:nth-child(2) {
+    flex-basis: calc(50% - 0.75rem);
+  }
+
+  #contact-form input[type="submit"] {
+    width: fit-content;
+    padding-inline: 5rem;      
   }
 }
 
 /***************** Tablet *****************/
 @media (min-width: 35em) and (max-width: 55em) {
+  :root {
+    --fs-600: 2.5rem;
+    --fs-500: 1.3rem;
+    --fs-400: 1.1rem;
+  }
+
   #nav-bar li a>span {
     display: none;
   }
 
   .project {
     width: 14rem;
-  }
+  }  
 }
 
 /***************** Desktop *****************/
-@media (min-width: 35em) and (max-width: 55em) {
- #intro {
-   min-height: 85vh;
- } 
+@media (min-width: 55em) {
+  :root {
+    --fs-600: 3rem;
+    --fs-500: 1.5rem;
+    --fs-400: 1.125rem;
+  }
+
+  #intro {
+    min-height: 85vh;
+  }
 }
 
 /***************** Large desktop *****************/
