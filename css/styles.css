@@ -17,6 +17,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--ff-body);
   font-size: var(--fs-400);
@@ -67,11 +71,6 @@ h1 {
   text-transform: uppercase;
 }
 
-/* main {
-  background-color: #121212;
-  color: #fff;
-} */
-
 main .section-title {
   width: fit-content;
   background-color: var(--primary-color);
@@ -81,6 +80,10 @@ main .section-title {
 
 main .content {
   padding-top: min(6vh, 6rem);
+}
+
+#my-work, #about-me, #contact-me {
+  scroll-margin-top: 4rem;
 }
 
 .circle {
@@ -261,7 +264,7 @@ header.container {
 #projects {
   gap: 2rem;
   flex-wrap: wrap;
-  flex: 1;
+  flex: 1;  
 }
 
 .project {
@@ -412,9 +415,20 @@ input[type="submit"]:hover {
 
 /***************** Footer *****************/
 footer {
-  font-size: 0.8rem;
+  justify-content: space-between;
+  font-size: 0.7rem;
   background-color: #000;
   color: #fff;
+}
+
+.socials {
+  min-width: 3rem;
+  justify-content: space-between;
+}
+
+.socials a {
+  color: #fff;
+  text-decoration: none;
 }
 
 /***************** Larger than mobile *****************/
@@ -442,7 +456,14 @@ footer {
 
   #contact-form input[type="submit"] {
     width: fit-content;
-    padding-inline: 5rem;      
+    padding-inline: 5rem;
+  }
+
+  footer {
+    font-size: 1rem;
+  }
+  .socials {
+    min-width: 4rem;
   }
 }
 
@@ -460,7 +481,7 @@ footer {
 
   .project {
     width: 14rem;
-  }  
+  }
 }
 
 /***************** Desktop *****************/
@@ -474,6 +495,11 @@ footer {
   #intro {
     min-height: 85vh;
   }
+
+  #about-me-content {
+    flex-direction: row;
+    gap: 5rem;
+  }  
 }
 
 /***************** Large desktop *****************/
