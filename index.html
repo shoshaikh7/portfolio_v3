@@ -16,7 +16,6 @@
       crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
-
   <body>
     <!-- START-Header -->
     <header class="container flex">
@@ -101,24 +100,36 @@
         <h1 class="section-title">My Work</h1>
         <div id="projects" class="content flex">
           <div class="project">
-            <a href="">
+            <a href="https://shoshaikh7.github.io/simpleTasks/" target="_blank">
               <div class="project-img" id="simple-tasks-img"></div>
             </a>
             <h3 class="project-name">SimpleTasks</h3>
             <p class="project-description">
               Simple app that lets you categorize your tasks
             </p>
-            <a href="" class="project-link">View project</a>
+            <a
+              href="https://shoshaikh7.github.io/simpleTasks/"
+              target="_blank"
+              class="project-link"
+              >View project</a
+            >
           </div>
           <div class="project">
-            <a href="">
+            <a
+              href="https://shoshaikh7.github.io/50projects50days/"
+              target="_blank">
               <div class="project-img" id="fifty-projects-fifty-days"></div>
             </a>
             <h3 class="project-name">50 Projects in 50 Days</h3>
             <p class="project-description">
               50 fun mini projects in 50 days using HTML, CSS and JavaScript
             </p>
-            <a href="" class="project-link">View project</a>
+            <a
+              href="https://shoshaikh7.github.io/50projects50days/"
+              target="_blank"
+              class="project-link"
+              >View project</a
+            >
           </div>
         </div>
       </section>
@@ -161,17 +172,10 @@
         <div id="contact" class="content">
           <p id="success"></p>
           <form
-            action="https://formsubmit.co/4094237cedf14ddf60934426759bd598"
-            method="POST"
             id="contact-form"
             autocomplete="off"
             onsubmit="event.preventDefault(); validateForm()">
-            <input type="text" name="_honey" style="display: none" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input
-              type="hidden"
-              name="_next"
-              value="http://127.0.0.1:5500/index.html" />
+            <input type="text" name="honey" style="display: none" />
             <ul class="flex">
               <li id="form-name">
                 <!-- <label for="name">Name</label> -->
@@ -185,7 +189,7 @@
               </li>
               <li id="form-subject">
                 <!-- <label for="subject">Subject</label> -->
-                <input type="text" name="_subject" placeholder="Subject" />
+                <input type="text" name="subject" placeholder="Subject" />
                 <small class="error"></small>
               </li>
               <li id="form-message">
@@ -194,6 +198,14 @@
                 <small class="error"></small>
               </li>
             </ul>
+            <!-- <div class="recaptcha-container">
+              <div
+                class="g-recaptcha"
+                data-sitekey="6LdHkeEnAAAAANfu8AYVcoh27d3QS-OrFwAUh8oW"
+                data-callback="onloadCallback"
+                data-theme="dark"></div>
+              <small class="error"></small>
+            </div> -->
             <input id="form-submit" type="submit" value="Submit" />
           </form>
         </div>
@@ -204,7 +216,7 @@
     <!-- START-Footer -->
     <footer class="container flex">
       <div class="made-by">
-        Made by <span class="highlight">Shoaib Shaikh</span> © 2022
+        Made by <span class="highlight">Shoaib Shaikh</span> © 2023
       </div>
       <div class="socials flex">
         <a href="https://github.com/shoshaikh7"
@@ -216,7 +228,16 @@
       </div>
     </footer>
     <!-- END-Footer -->
-
     <script src="js/main.js"></script>
+    <!-- g-recaptcha for contact form -->
+    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("yoTZEvlksuZwGreVw");
+      })();
+    </script>
   </body>
 </html>
